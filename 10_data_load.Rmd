@@ -1,0 +1,35 @@
+---
+title: "10_data_load"
+output: html_document
+---
+
+```{r library_load}
+library(readr)
+library(tidyverse)
+```
+# Read Data
+```{r data_load}
+# use 'Import Dataset' tool and copy paste from Code Preview
+ArchaeologicalSoilData <- read_csv("./ArchaeologicalSoilData.csv", 
+    col_types = cols(Da = col_double(), Dp = col_double(), FWidth = col_double(), FLength = col_double(), 
+                     FThickness = col_double(), ELength = col_double(), EThickness = col_double(), EWidth = col_double(), 
+                     Volume = col_double(), Area = col_double(), Perimeter = col_double(), `CHull  Area` = col_double(), 
+                     `CHull Perimeter` = col_double(), `Surface Area` = col_double(), `CHull Surface Area` = col_double(), 
+                     Sieve = col_double(), `Fiber Length` = col_double(), `Fiber Width` = col_double()))
+
+LithicExperimentalData <- read_csv("./LithicExperimentalData.csv", 
+    col_types = cols(Da = col_double(), Dp = col_double(), FWidth = col_double(), FLength = col_double(), 
+                     FThickness = col_double(), ELength = col_double(), EThickness = col_double(), EWidth = col_double(),
+                     Volume = col_double(), Area = col_double(),Perimeter = col_double(), `CHull  Area` = col_double(),
+                     `CHull Perimeter` = col_double(), `Surface Area` = col_double(), `CHull Surface Area` = col_double(), 
+                     Sieve = col_double(), `Fiber Length` = col_double(), `Fiber Width` = col_double()))
+```
+
+
+# Preview Data
+```{r data_check}
+ArchaeologicalSoilData %>% head()
+LithicExperimentalData %>% head()
+```
+
+
